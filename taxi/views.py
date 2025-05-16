@@ -6,8 +6,12 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Driver, Car, Manufacturer
-from .forms import DriverCreationForm, DriverLicenseUpdateForm, CarForm, DriverSearchForm, CarSearchForm, \
-    ManufacturerSearchForm
+from .forms import (DriverCreationForm,
+                    DriverLicenseUpdateForm,
+                    CarForm,
+                    DriverSearchForm,
+                    CarSearchForm,
+                    ManufacturerSearchForm)
 
 
 @login_required
@@ -54,7 +58,6 @@ class ManufacturerListView(LoginRequiredMixin, generic.ListView):
             return Manufacturer.objects.all()
 
 
-
 class ManufacturerCreateView(LoginRequiredMixin, generic.CreateView):
     model = Manufacturer
     fields = "__all__"
@@ -76,7 +79,6 @@ class CarListView(LoginRequiredMixin, generic.ListView):
     model = Car
     paginate_by = 5
     queryset = Car.objects.select_related("manufacturer")
-
 
     def get_context_data(self, **kwargs):
         context = super(CarListView, self).get_context_data(**kwargs)

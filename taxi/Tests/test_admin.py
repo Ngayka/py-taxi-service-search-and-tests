@@ -2,6 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 
+
 class AdminTest(TestCase):
     def setUp(self):
         self.client = Client()
@@ -16,7 +17,8 @@ class AdminTest(TestCase):
             password="driverpassword",
             license_number="number",
         )
+
     def test_driver_license_number_listed(self):
-        url = reverse('admin:taxi_driver_change', args=[self.driver.id])
+        url = reverse("admin:taxi_driver_change", args=[self.driver.id])
         res = self.client.get(url)
         self.assertContains(res, self.driver.license_number)
