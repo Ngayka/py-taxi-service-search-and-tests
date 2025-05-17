@@ -19,10 +19,12 @@ class ModelTests(TestCase):
         username = "test_username"
         first_name = "test_first_name"
         last_name = "test_last_name"
+        license_number = "AAA1111"
         driver = Driver.objects.create(
             username=username,
             first_name=first_name,
             last_name=last_name,
+            license_number=license_number,
         )
         self.assertEqual(str(driver),
             f"{driver.username} ({driver.first_name} {driver.last_name})"

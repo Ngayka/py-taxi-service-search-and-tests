@@ -16,6 +16,8 @@ class AdminTest(TestCase):
             username="driver",
             password="driverpassword",
             license_number="number",
+            first_name="firstname",
+            last_name="lastname",
         )
 
     def test_driver_license_number_listed(self):

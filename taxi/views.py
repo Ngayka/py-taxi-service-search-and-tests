@@ -121,6 +121,7 @@ class CarDeleteView(LoginRequiredMixin, generic.DeleteView):
 class DriverListView(LoginRequiredMixin, generic.ListView):
     model = Driver
     paginate_by = 5
+    context_object_name = "driver_list"
 
     def get_context_data(self, **kwargs):
         context = super(DriverListView, self).get_context_data(**kwargs)
