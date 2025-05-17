@@ -11,21 +11,27 @@ class DriversSearchTest(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
             username="semde",
-            password="<PASSWORD>"
+            password="test_password"
         )
         self.client.force_login(self.user)
 
         self.driver1 = Driver.objects.create(
             username="john",
             license_number="AAA1111",
+            first_name="John",
+            last_name="Smith",
         )
         self.driver2 = Driver.objects.create(
             username="jane",
             license_number="AAA2222",
+            first_name="Jane",
+            last_name="Smith",
         )
         self.driver3 = Driver.objects.create(
             username="kent",
             license_number="AAA3333",
+            first_name="Kent",
+            last_name="Smith",
         )
         manufacturer = Manufacturer.objects.create(name="Audi")
         self.car = Car.objects.create(

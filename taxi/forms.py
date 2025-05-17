@@ -63,7 +63,7 @@ class DriverSearchForm(forms.Form):
         {
             "class": "form-control",
             "placeholder": "Driver`s username",
-            "autocomplete": False
+            "autocomplete": "off"
         }
             )
                 ))
@@ -77,7 +77,7 @@ class CarSearchForm(forms.Form):
         {
             "class": "form-control",
             "placeholder": "Car`s model`",
-            "autocomplete": False
+            "autocomplete": "off"
         }))
 
 
@@ -89,7 +89,7 @@ class ManufacturerSearchForm(forms.Form):
         {
             "class": "form-control",
             "placeholder": "Manufacturer`s name`",
-            "autocomplete": False
+            "autocomplete": "off"
         }
             )
                 )

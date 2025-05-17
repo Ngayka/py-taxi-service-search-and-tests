@@ -36,7 +36,6 @@ class ModelTests(TestCase):
             license_number="AAA43434"
         )
         manufacturer = Manufacturer.objects.create(
-            id=1,
             name="test_manufacturer",
             country="test_country"
         )
